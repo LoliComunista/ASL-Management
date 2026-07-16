@@ -270,12 +270,12 @@ Nesta seção serão apresentados os protótipos das principais telas do sistema
 <img width="791" height="422" alt="image" src="https://github.com/user-attachments/assets/481df35f-0f54-479f-ad70-6ee362029543" />
 
 
-### Dashboard
+### Painel Inicial
 
-<img width="797" height="443" alt="image" src="https://github.com/user-attachments/assets/a4958fe1-1235-4d0f-90ad-bca548b8e282" />
+<img width="794" height="442" alt="image" src="https://github.com/user-attachments/assets/e8912506-7e9d-4250-aa66-3fa277e98700" />
 
 
-### Cadastro de Clientes
+### Clientes
 
 <img width="801" height="445" alt="image" src="https://github.com/user-attachments/assets/9172ff23-67ca-47ad-b013-289efc2c3f9c" />
 
