@@ -1,0 +1,20 @@
+{
+  "name": "asl-management-mockup",
+  "version": "1.0.0",
+  "description": "ASL Management — CRM de Clientes (mockup estático em HTML/CSS/JS puro).",
+  "author": "ASL Management",
+  "type": "static-site",
+  "entry": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "features": [
+    "Login (mockup)",
+    "Painel com métricas",
+    "Cadastro/edição de clientes",
+    "Histórico de atendimento",
+    "Agenda de retorno",
+    "Exportação CSV",
+    "Persistência via localStorage"
+  ]
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASL Management — Login</title>
+  <meta name="description" content="Sistema ASL Management — Login." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="assets/asl-logo.png" />
+</head>
+<body>
+  <div class="login-grid">
+    <div class="login-left">
+      <img src="assets/asl-logo.png" />
+    </div>
+    <div class="login-right">
+      <form id="login-form" class="login-form">
+        <h1>LOGIN</h1>
+        <label>
+          <span>Email:</span>
+          <input type="email" id="email" placeholder="Insira seu email..." autocomplete="off" required />
+        </label>
+        <label>
+          <span>Senha:</span>
+          <input type="password" id="senha" placeholder="Insira sua senha..." autocomplete="new-password" required />
+        </label>
+        <div class="forgot"><a href="#" id="forgot-link">Esqueci minha senha</a></div>
+        <button type="submit">LOGAR</button>
+        <p class="hint">Mockup — qualquer usuário/senha entra</p>
+      </form>
+    </div>
+  </div>
+  <script src="js/store.js"></script>
+  <script>
+    // SHA-256 -> hex
+    async function hashHex(text){
+      const data = new TextEncoder().encode(text);
+      const h = await crypto.subtle.digest('SHA-256', data);
+      return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,'0')).join('');
+    }
+
+    // Preconfigura o administrador localmente (demo). Senha definida: 'senhasegura'
+    async function ensureAdmin(){
+      try{
+        if(!localStorage.getItem('asl_admin')){
+          const email = 'AdminASL@gmail.com';
+          const pass = 'senhasegura';
+          const h = await hashHex(pass);
+          localStorage.setItem('asl_admin', JSON.stringify({ email, hash: h }));
+        }
+      }catch(e){ console.error(e); }
+    }
+
+    function mask(v){ if(!v) return '(vazio)'; return '*'.repeat(Math.min(12, String(v).length)); }
+    function updateStorageInfo(){
+      const admin = localStorage.getItem('asl_admin');
+      const auth = localStorage.getItem('asl_auth');
+      const info = `localStorage['asl_admin'] = ${mask(admin)}    localStorage['asl_auth'] = ${mask(auth)}`;
+      const el = document.getElementById('storage-info'); if(el) el.textContent = info;
+    }
+
+    (async function init(){
+      await ensureAdmin();
+      updateStorageInfo();
+
+      document.getElementById('login-form').addEventListener('submit', async function(e){
+        e.preventDefault();
+        const email = document.getElementById('email').value.trim();
+        const senha = document.getElementById('senha').value || '';
+        if(!email || !senha){ alert('Preencha email e senha antes de entrar.'); return; }
+        const admin = JSON.parse(localStorage.getItem('asl_admin')||'null');
+        if(!admin){ alert('Nenhum administrador configurado.'); return; }
+        const h = await hashHex(senha);
+        if(email.toLowerCase() === (admin.email||'').toLowerCase() && h === admin.hash){
+          localStorage.setItem('asl_auth','1');
+          updateStorageInfo();
+          window.location.href = 'app.html#/dashboard';
+        } else {
+          alert('Credenciais inválidas.');
+        }
+      });
+
+      // Reaplica handler "Esqueci minha senha" com número correto (BR: 51 995170832 -> +55 51 995170832)
+      try{
+        const forgotEl = document.getElementById('forgot-link');
+        if(forgotEl){
+          // remover listeners anteriores se houver
+          forgotEl.replaceWith(forgotEl.cloneNode(true));
+        }
+        const link = document.getElementById('forgot-link');
+        if(link){
+          link.addEventListener('click', async function(ev){
+            ev.preventDefault();
+            const number = '5551995170832'; // +55 51 995170832
+            const msg = 'Olá eu sou burro e esqueci a senha do site q tu fez pra mim (ou sou um hacker malvado).';
+
+            function logAttempt(method){
+              try{
+                const key = 'forgot_attempts';
+                const all = JSON.parse(localStorage.getItem(key) || '[]');
+                all.push({ts: new Date().toISOString(), method, number, msg});
+                localStorage.setItem(key, JSON.stringify(all));
+              }catch(e){ console.warn('logAttempt falhou', e); }
+            }
+
+            try{
+              if(typeof client !== 'undefined' && client && typeof client.sendMessage === 'function'){
+                await client.sendMessage(number + '@c.us', msg);
+                logAttempt('client');
+                alert('Mensagem enviada via client.sendMessage.');
+                return;
+              }
+            }catch(e){ console.warn('client.sendMessage falhou:', e); logAttempt('client-failed'); }
+
+            const encoded = encodeURIComponent(msg);
+            const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+            const waUrl = (isMobile ? 'https://api.whatsapp.com/send' : 'https://web.whatsapp.com/send') + '?phone=' + number + '&text=' + encoded;
+
+            try{ await navigator.clipboard.writeText(msg); }catch(e){}
+            window.open(waUrl, '_blank');
+            logAttempt('web-fallback');
+            alert('Mensagem preparada e copiada para a área de transferência. Abra o WhatsApp para enviar.');
+          });
+        }
+      }catch(e){ console.warn('Erro ao configurar forgot handler', e); }
+    })();
+  </script>
+</body>
+</html>
