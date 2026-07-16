@@ -258,7 +258,8 @@ Nesta seção serão apresentados os protótipos das principais telas do sistema
 
 ### Painel Inicial
 
-<img width="794" height="442" alt="image" src="https://github.com/user-attachments/assets/e8912506-7e9d-4250-aa66-3fa277e98700" />
+<img width="1362" height="630" alt="image" src="https://github.com/user-attachments/assets/3be4baae-5d5f-4bb9-89a0-ee7d839a6075" />
+
 
 
 ### Clientes
