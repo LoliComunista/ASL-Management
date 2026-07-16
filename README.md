@@ -1,29 +1,18 @@
  📋 Sistema de Gerenciamento de Clientes (CRM)
 
-## 📌 Navegação Rápida
+## 📌 Navegação
 
-- 📋 [Sobre o Projeto](#-sobre-o-projeto)
-- 🎯 [Objetivo](#-objetivo)
-- 👤 [Ator do Sistema](#-ator-do-sistema)
-- 📌 [Funcionalidades](#-funcionalidades)
-  - 👥 [Cadastro de Clientes](#cadastro-de-clientes)
-  - 📝 [Histórico de Atendimento](#histórico-de-atendimento)
-  - 🔍 [Busca de Clientes](#busca-de-clientes)
-  - 📄 [Lista Geral](#lista-geral)
-  - 📅 [Agenda de Retorno](#agenda-de-retorno)
-  - 📊 [Dashboard](#dashboard)
-  - ✏️ [Edição de Clientes](#edição-de-clientes)
-  - 🗑️ [Exclusão de Clientes](#exclusão-de-clientes)
-  - 📂 [Organização dos Clientes](#organização-dos-clientes)
-  - 📌 [Observações Gerais](#observações-gerais)
-  - 📤 [Exportação CSV](#exportação-csv)
-- 📈 [Diagrama de Casos de Uso](#-diagrama-de-casos-de-uso)
-- 📑 [Requisitos Funcionais](#-requisitos-funcionais)
-- ⚙️ [Requisitos Não Funcionais](#️-requisitos-não-funcionais)
-- 🗄️ [Modelo de Dados](#️-modelo-de-dados)
-- 🚀 [Fluxo Básico do Sistema](#-fluxo-básico-do-sistema)
-- 🛠️ [Tecnologias Utilizadas](#️-tecnologias-utilizadas)
-- 📖 [Considerações Finais](#-considerações-finais)
+- [📋 Sobre o Projeto](#-sobre-o-projeto)
+- [🎯 Objetivo](#-objetivo)
+- [📌 Funcionalidades](#-funcionalidades)
+- [📈 Diagrama de Casos de Uso](#-diagrama-de-casos-de-uso)
+- [📑 Requisitos Funcionais](#-requisitos-funcionais)
+- [⚙️ Requisitos Não Funcionais](#️-requisitos-não-funcionais)
+- [🗄️ Modelo de Dados](#️-modelo-de-dados)
+- [🖼️ Mockups](#️-mockups)
+- [🚀 Fluxo do Sistema](#-fluxo-básico-do-sistema)
+- [🛠️ Tecnologias Utilizadas](#️-tecnologias-utilizadas)
+- [📖 Considerações Finais](#-considerações-finais)
 
 📋 Sobre o Projeto
 
