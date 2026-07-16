@@ -260,29 +260,32 @@ O sistema foi modelado utilizando:
 
 Nesta seção serão apresentados os protótipos das principais telas do sistema.
 
+### Logo
+
+<img width="798" height="445" alt="image" src="https://github.com/user-attachments/assets/406fe542-48ee-465a-8efa-8eb4f1e8517a" />
+
+
 ### Tela de Login
 
-> *(Inserir imagem)*
+<img width="791" height="422" alt="image" src="https://github.com/user-attachments/assets/481df35f-0f54-479f-ad70-6ee362029543" />
+
 
 ### Dashboard
 
-> *(Inserir imagem)*
+<img width="797" height="443" alt="image" src="https://github.com/user-attachments/assets/a4958fe1-1235-4d0f-90ad-bca548b8e282" />
+
 
 ### Cadastro de Clientes
 
-> *(Inserir imagem)*
-
-### Lista de Clientes
-
-> *(Inserir imagem)*
-
-### Histórico de Atendimento
-
-> *(Inserir imagem)*
+<img width="801" height="445" alt="image" src="https://github.com/user-attachments/assets/9172ff23-67ca-47ad-b013-289efc2c3f9c" />
 
 ### Agenda de Retorno
 
-> *(Inserir imagem)*
+<img width="797" height="438" alt="image" src="https://github.com/user-attachments/assets/c087a485-89fb-40d9-8f11-c80c2d6a64d1" />
+
+### Menu Lateral
+
+<img width="785" height="439" alt="image" src="https://github.com/user-attachments/assets/9d098486-333b-437e-9fcc-5cf35fb178ae" />
 
 ---
 
