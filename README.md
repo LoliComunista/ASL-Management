@@ -188,19 +188,8 @@ O sistema possui um único ator (**Administrador**) responsável por todas as op
 
 ### Casos de Uso
 
-* Cadastrar Cliente;
-* Editar Cliente;
-* Excluir Cliente;
-* Confirmar Exclusão;
-* Buscar Cliente;
-* Consultar Cliente;
-* Visualizar Lista Geral;
-* Dashboard;
-* Registrar Histórico;
-* Cadastrar Agenda de Retorno;
-* Visualizar Retornos Pendentes;
-* Registrar Observações Gerais;
-* Exportar CSV.
+<img width="863" height="511" alt="image" src="https://github.com/user-attachments/assets/43fa8e0a-a60d-4a02-b076-1bb9093e5f6b" />
+
 
 ---
 
@@ -248,13 +237,10 @@ O sistema foi modelado utilizando:
 * DER (Diagrama Entidade-Relacionamento);
 * Diagrama de Casos de Uso (UML).
 
-### Principais entidades
+### DER
 
-* Cliente;
-* Histórico;
-* Agenda de Retorno.
+<img width="869" height="401" alt="image" src="https://github.com/user-attachments/assets/2b9b3386-84d3-40b6-b792-ba6c9490ed9e" />
 
----
 
 ## 🖼️ Mockups
 
